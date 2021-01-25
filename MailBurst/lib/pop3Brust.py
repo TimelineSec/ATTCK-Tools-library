@@ -29,7 +29,7 @@ async def login(mailAddr,mailPort,username,password):
     try:
         username = username.replace("\n", "")
         password = password.replace("\n", "")
-        pop3Server = poplib.POP3(mailAddr, mailPort)
+        pop3Server = await poplib.POP3(mailAddr, mailPort)
         pop3Server.user(username)
         pop3Server.pass_(password)
         print("[-]密码正确" + "账户名:" + username + "密码:" + password)

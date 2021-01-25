@@ -2,6 +2,8 @@
 import smtplib
 import threading
 import asyncio
+import time
+
 
 class smtpBurst(threading.Thread):
     def __init__(self, mailAddr, mailPort, userLines, passLines):
@@ -10,6 +12,7 @@ class smtpBurst(threading.Thread):
         self.mailPort = mailPort
         self.userLines = userLines
         self.passLines = passLines
+
     def run(self):
         try:
             smtplib.SMTP(self.mailAddr, self.mailPort)
@@ -26,14 +29,17 @@ class smtpBurst(threading.Thread):
                 threadLock.release()
                 continue
 
+
 async def login(mailAddr, mailPort, username, password):
     try:
         username = username.replace("\n", "")
         password = password.replace("\n", "")
-        smtpServer = smtplib.SMTP(mailAddr, mailPort)
+        smtpServer = await smtplib.SMTP(mailAddr, mailPort)
         smtpServer.login(username, password)
         print("[-]密码正确" + "账户名:" + username + "密码:" + password)
     except:
         print("[-]错误信息:密码错误!")
+
+
 threadLock = threading.Lock()
 loop = asyncio.get_event_loop()

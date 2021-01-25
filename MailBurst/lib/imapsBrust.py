@@ -36,7 +36,7 @@ async def login(mailAddr,mailPort,username,password):
         try:
             username = username.replace("\n", "")
             password = password.replace("\n", "")
-            imapServer = imaplib.IMAP4_SSL(mailAddr, mailPort)
+            imapServer = await imaplib.IMAP4_SSL(mailAddr, mailPort)
             imapServer.login_cram_md5(username, password)
             print("[-]密码正确" + "账户名:" + username + "密码:" + password)
         except:

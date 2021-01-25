@@ -30,7 +30,7 @@ async def login(mailAddr, mailPort, username, password):
     try:
         username = username.replace("\n", "")
         password = password.replace("\n", "")
-        smtpServer = smtplib.SMTP_SSL(mailAddr, mailPort)
+        smtpServer = await smtplib.SMTP_SSL(mailAddr, mailPort)
         smtpServer.login(username, password)
         print("[-]密码正确" + "账户名:" + username + "密码:" + password)
     except:
