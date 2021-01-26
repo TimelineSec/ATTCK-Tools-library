@@ -29,3 +29,5 @@
 流量解码：java -jar seeyon.jar decode ciphertext 
 
 流量编码：java -jar seeyon.jar encode Plaintext
+
+使用参考：https://mp.weixin.qq.com/s/NKksirrM5Zg5BGCu4fY8LQ
