@@ -23,3 +23,5 @@ Jspx文件CDATA编码：java -jar JspEncoder.jar CdataEn srcFile desFile
 Base64文件输出为class文件：java -jar JspEncoder.jar ClassOut srcFile desFile
 
 class文件输出为Base64文件：java -jar JspEncoder.jar ClassIn srcFile desFile
+
+使用参考：https://mp.weixin.qq.com/s/NKksirrM5Zg5BGCu4fY8LQ
