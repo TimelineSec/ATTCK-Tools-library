@@ -19,3 +19,5 @@ SMTPS协议暴力破解：python MailBrust.py xxx.com SMTPS username.txt passwor
 IMAP协议暴力破解：python MailBrust.py xxx.com IMAP username.txt password.txt 
 
 IMAPS协议暴力破解：python MailBrust.py xxx.com IMAPS username.txt password.txt 
+
+使用参考：https://mp.weixin.qq.com/s/NKksirrM5Zg5BGCu4fY8LQ
