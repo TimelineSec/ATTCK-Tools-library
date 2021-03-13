@@ -25,3 +25,7 @@ Base64文件输出为class文件：java -jar JspEncoder.jar ClassOut srcFile des
 class文件输出为Base64文件：java -jar JspEncoder.jar ClassIn srcFile desFile
 
 使用参考：https://mp.weixin.qq.com/s/NKksirrM5Zg5BGCu4fY8LQ
+
+### 0x02 注意事项
+
+在进行Unicode编码时请去掉jsp文件的类声明和引入声明模块，否则jsp文件将无法运行
