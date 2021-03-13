@@ -25,8 +25,14 @@ public class HTTPClient {
             System.out.println(result);
             return result;
         }else{
-            CloseableHttpClient client = new SSLClient();
+            CloseableHttpClient client;
             URIBuilder uriBuilder = new URIBuilder(url);
+            int port = uriBuilder.getPort();
+            if (port != 443){
+                client = new SSLClient(uriBuilder.getPort());
+            }else {
+                client = new SSLClient(443);
+            }
             HttpPost httpPost = new HttpPost(uriBuilder.build());
             StringEntity stringEntity = new StringEntity(param);
             stringEntity.setContentType("application/x-www-form-urlencoded");
@@ -52,8 +58,14 @@ public class HTTPClient {
                 System.out.println(result);
             }
         }else {
-            CloseableHttpClient client = new SSLClient();
+            CloseableHttpClient client;
             URIBuilder uriBuilder = new URIBuilder(url);
+            int port = uriBuilder.getPort();
+            if (port != 443){
+                client = new SSLClient(uriBuilder.getPort());
+            }else {
+                client = new SSLClient(443);
+            }
             HttpGet httpGet = new HttpGet(uriBuilder.build());
             CloseableHttpResponse response = client.execute(httpGet);
             result = EntityUtils.toString(response.getEntity());
@@ -79,8 +91,14 @@ public class HTTPClient {
                 System.out.println("[*]命令执行完毕");
             }
         }else {
-            CloseableHttpClient client = new SSLClient();
+            CloseableHttpClient client;
             URIBuilder uriBuilder = new URIBuilder(url);
+            int port = uriBuilder.getPort();
+            if (port != 443){
+                client = new SSLClient(uriBuilder.getPort());
+            }else {
+                client = new SSLClient(443);
+            }
             HttpPost httpPost = new HttpPost(uriBuilder.build());
             httpPost.setHeader("Connection","close");
             StringEntity stringEntity = new StringEntity(param);

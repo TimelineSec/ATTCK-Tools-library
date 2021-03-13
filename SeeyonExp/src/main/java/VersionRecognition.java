@@ -54,8 +54,14 @@ public class VersionRecognition {
                 System.out.println("[!]网页无内容，请检查后重新运行");
             }
         }else {
-            CloseableHttpClient client = new SSLClient();
+            CloseableHttpClient client;
             URIBuilder uriBuilder = new URIBuilder(url);
+            int port = uriBuilder.getPort();
+            if (port != 443){
+                client = new SSLClient(uriBuilder.getPort());
+            }else {
+                client = new SSLClient(443);
+            }
             HttpGet httpGet = new HttpGet(uriBuilder.build());
             CloseableHttpResponse response = client.execute(httpGet);
             String result = EntityUtils.toString(response.getEntity());

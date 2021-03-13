@@ -10,7 +10,7 @@ public class Scanner{
         if (result.contains(res)) {
             return url + "\n[!]:漏洞存在";
         } else {
-            return url + "[*]:漏洞不存在";
+            return url + "\n[*]:漏洞不存在";
         }
     }
 }
